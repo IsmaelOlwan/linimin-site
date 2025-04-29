@@ -1,0 +1,56 @@
+:root {
+    --color-primary: #0d1b2a;
+    --color-secondary: #1b263b;
+    --color-accent: #4ea8de;
+    --color-light: #f1f1f1;
+    --font-family: 'Inter', sans-serif;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-family); color: var(--color-primary); line-height: 1.6; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+  .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+  
+  /* Header & nav */
+  header { background: var(--color-secondary); padding: 1rem 0; }
+  nav ul { display: flex; justify-content: flex-end; list-style: none; gap: 1rem; }
+  nav a { color: #fff; font-weight: 600; }
+  
+  /* Hero */
+  .hero { display: flex; align-items: center; justify-content: space-between; padding: 4rem 0; }
+  .hero-text { max-width: 600px; }
+  .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+  .hero p { margin-bottom: 1.5rem; }
+  .btn { background: var(--color-accent); color: #fff; padding: .75rem 1.5rem; border-radius: 4px; font-weight: 600; }
+  
+  /* Generella sektioner */
+  section { padding: 4rem 0; }
+  h2 { font-size: 2rem; margin-bottom: 1rem; text-align: center; }
+  .grid { display: grid; gap: 2rem; }
+  
+  /* Services */
+  .services .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .service-item { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 2rem; text-align: center; }
+  
+  /* Process */
+  .process .grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center; }
+  .process-item { background: var(--color-light); padding: 2rem; border-radius: 8px; }
+  
+  /* Testimonials */
+  .testimonials .grid { grid-template-columns: 1fr; }
+  .testimonial { background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  
+  /* Pricing */
+  .pricing .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .plan { background: #fff; padding: 2rem; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  
+  /* Footer */
+  footer { background: var(--color-secondary); color: #fff; text-align: center; padding: 2rem 0; }
+  
+  /* Mobilanpassning */
+  @media (max-width: 768px) {
+    .hero { flex-direction: column; text-align: center; }
+    nav ul { justify-content: center; }
+  }
+  

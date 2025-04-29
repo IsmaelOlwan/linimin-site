@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Linimin AI Automation Agency</title>
+  <meta name="description" content="Kontakta Linimin AI för en gratis konsultation om AI-automation.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kontakt – Linimin AI Automation Agency">
+  <meta property="og:description" content="Kontakta Linimin AI för en gratis konsultation om AI-automation.">
+  <meta property="og:type" content="website">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}  
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="about.html">Om oss</a></li>
+          <li><a href="services.html">Tjänster</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="case.html">Case</a></li>
+          <li><a href="pricing.html">Priser</a></li>
+          <li><a href="contact.html" class="active">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-text" style="text-align:center;">
+      <h1>Kontakta oss</h1>
+      <p>Fyll i formuläret nedan eller skicka ett mail direkt så återkommer vi inom kort.</p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="container">
+      <!-- OBS: Byt ut 'yourFormId' mot det ID du får från Formspree när du skapar ditt formulär -->
+      <form id="contact-form" action="https://formspree.io/f/manoqbko" method="POST" style="max-width:600px; margin:1rem auto; display:flex; flex-direction:column; gap:1rem;">
+        <input type="hidden" name="_subject" value="Ny kontaktförfrågan från webben">
+        <input type="text" name="name" placeholder="Namn" required style="padding:0.75rem; border-radius:4px; border:1px solid #ccc;">
+        <input type="email" name="email" placeholder="E-post" required style="padding:0.75rem; border-radius:4px; border:1px solid #ccc;">
+        <textarea name="message" placeholder="Meddelande" rows="5" required style="padding:0.75rem; border-radius:4px; border:1px solid #ccc;"></textarea>
+        <button type="submit" class="btn">Skicka meddelande</button>
+      </form>
+      <div id="success-message" style="display:none; text-align:center; margin-top:2rem;">
+        <p>Tack! Ditt meddelande har skickats. Vi återkommer inom kort.</p>
+      </div>
+      <div id="contact-info" style="text-align:center; margin-top:2rem;">
+        <p>E-post: <a href="mailto:info@linimin.ai">info@linimin.ai</a></p>
+        <p>Telefon: <a href="tel:+46701234567">+46 70 123 45 67</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Linimin AI Automation Agency. Alla rättigheter förbehållna.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          document.getElementById('success-message').style.display = 'block';
+        } else {
+          alert('Ett fel uppstod. Försök igen senare.');
+        }
+      }).catch(() => alert('Ett fel uppstod. Försök igen senare.'));
+    });
+  </script>
+</body>
+</html>
