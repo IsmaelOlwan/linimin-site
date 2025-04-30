@@ -36,8 +36,22 @@
       <a href="#kontakt" class="btn">Boka gratis konsultation</a>
     </div>
     <div class="hero-image">
-      <img src="https://source.unsplash.com/600x400/?technology,automation" alt="Automation illustration">
-    </div>
+      <picture>
+        <!-- Förweb Bildformat -->
+        <source
+          srcset="hero-1200.webp 1200w, hero-600.webp 600w"
+          type="image/webp"
+        />
+        <!-- Fallback för äldre webbläsare eller PNG -->
+        <img
+          src="hero.png"
+          alt="Abstrakt AI-nätverk"
+          loading="lazy"
+          width="1200"
+          height="600"
+        />
+      </picture>
+    </div>    
   </section>
 
   <section id="om">
